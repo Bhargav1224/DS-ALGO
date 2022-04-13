@@ -1,43 +1,34 @@
-// Masai Even or Odd -9950:32:0
+// Square It -9927:5:24
 // Description
 
-// You are provided an integer. Your task is to write a program that prints "Even" (without quotes) if the number is even and "Odd" (without quotes) if the number is odd.
-
+// You are given an integer N, print its  [square value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) (number raised to exponent 2)
 
 // Input
 // Input Format
 
-// There is just one positive integer in input
+// First and the only line contains one integer N
 
 // Constraints
 
-// integer > 1
-
+// N<100
 
 // Output
-// Output Format
-
-// Print "Even" or "Odd" depending on the value.
-
+// Output an integer which is square of N
 
 // Sample Input 1
 
-// 5
+// 7
 // Sample Output 1
 
-// Odd
+// 49
 
 function runProgram(input) {
-   var num = input.trim().split().map(Number);
-   if (num % 2 == 0) {
-     console.log("Even");
-   } else {
-     console.log("Odd");
-   }
+  var input = +input.trim().split("\n");
+  console.log(Math.pow(input, 2));
 }
 
 if (process.env.USERNAME == "bhargav") {
-  runProgram(`5`);
+  runProgram(`7`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");

@@ -1,9 +1,9 @@
 function runProgram(input) {
-  var input = input.trim().split("\n");
-  console.log(input);
+  var data = input.split(/[\n]+/);
+  console.log(data);
 }
 
-if (process.env.USERNAME == "bhargav@sakhatech") {
+if (process.env.USERNAME == "bhargav") {
   runProgram(`5`);
 } else {
   process.stdin.resume();

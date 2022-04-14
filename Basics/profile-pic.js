@@ -34,11 +34,26 @@
 // Increase Length
 
 function runProgram(input) {
-  var data = input.split(" ").map(Number);
+  var data = input.split("\n");
+  const [len, wid] = data[0].trim().split(" ").map(Number);
+  const [upLen, upWid] = data[1].trim().split(" ").map(Number);
+
+  // Length of every picture uploaded should be greater than L and width should be greater than W
+  // If his picture passes both the criteria, print "Upload"
+  // In case it could not pass because of length, print "Increase Length"
+  // In all other cases, print "Increase Width"
+  if (upLen > len && upWid > wid) {
+    console.log("Upload");
+  } else if (upLen < len) {
+    console.log("Increase Length");
+  } else {
+    console.log("Increase Width");
+  }
 }
 
 if (process.env.USERNAME == "bhargav") {
-  runProgram(`100 2`);
+  runProgram(`12 14
+8 19`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");

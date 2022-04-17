@@ -21,3 +21,36 @@
 // Sample Output 1
 
 // Go On
+
+function runProgram(input) {
+  var data = input.split(" ").map(Number);
+  //   console.log(data);
+  const km = data[0];
+  const distance = data[1];
+  if (distance > 50) {
+    console.log("Enough");
+  } else {
+    console.log("Go On");
+  }
+}
+
+if (process.env.USERNAME == "bhargav") {
+  runProgram(`1 46`);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}

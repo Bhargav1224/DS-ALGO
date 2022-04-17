@@ -1,40 +1,41 @@
-// Masai Divisors
+// Odd Sum Below N 
 // Description
 
-// You are provided 3 integers: *left*, *right* and *k*. Your task is to write a program that finds out the count of all such numbers between *left* and *right* (both inclusive) which are divided by *k*.
+// You are given a number N, find the sum of all odd numbers presents below it. (including N if N is an odd number)
 
 // Input
-// Input Format
+// Input format
 
-// First line contains 3 space separated integers which are left, right and k respectively.
+// First and the only line contains number N
 
 // Constraints
 
-// l,r,k<10000
+// N<100000
 
 // Output
-// Output the count of such numbers
+// Output the sum of all such numbers
 
 // Sample Input 1
 
-// 1 10 1
+// 7
 // Sample Output 1
 
-// 10
+// 16
 
 function runProgram(input) {
-  var [l, r, k] = input.split(" ").map(Number);
-  let output = 0;
-  for (let i = l; i <= r; i++) {
-    if (i % k == 0) {
-      output++;
+  var n = +input;
+  //   console.log(n);
+  let sum = 0;
+  for (var i = 0; i <= n; i++) {
+    if (i % 2 !== 0) {
+      sum += i;
     }
   }
-  console.log(output);
+  console.log(sum);
 }
 
 if (process.env.USERNAME == "bhargav") {
-  runProgram(`5 172 21`);
+  runProgram(`7`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");

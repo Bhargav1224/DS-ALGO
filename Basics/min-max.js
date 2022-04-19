@@ -55,8 +55,8 @@ function findMax(n, arr) {
 }
 
 if (process.env.USERNAME == "bhargav") {
-  runProgram(`1
-23`);
+  runProgram(`2
+0 3`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");

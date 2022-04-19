@@ -41,8 +41,20 @@ function runProgram(input) {
   const n = +data[0];
   const arr = data[1].trim("").split(" ").map(Number);
   let count = 0;
-  for (var i = 1; i < n - 1; i++) {
-    if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) count++;
+  for (var i = 0; i < n; i++) {
+    if (i == 0) {
+      if (arr[i] > arr[i + 1]) {
+        count++;
+      }
+    } else if (i == arr.length - 1) {
+      if (arr[i] > arr[i - 1]) {
+        count++;
+      }
+    } else {
+      if (arr[i] > arr[i + 1] && arr[i] > arr[i - 1]) {
+        count++;
+      }
+    }
   }
   console.log(count);
 }

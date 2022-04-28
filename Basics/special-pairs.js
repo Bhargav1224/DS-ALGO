@@ -38,10 +38,28 @@
 // 11 + 4 + 2 + 5 + 3 + 9 + 4 + 7 = 45
 
 function runProgram(input) {
-  var data = input.split(/[\n]+/);
-  const n = +data[0];
-  const arr = data[1].trim("").split(" ").map(Number);
-  
+  var num = input.trim().split(/[\r\n]+/);
+  var n = num[0].trim().split(" ").map(Number);
+  var array = num[1].trim().split(" ").map(Number);
+  var sum = 0;
+
+  for (i = 0; i < n; i++) {
+    for (j = 1; j < n; j++) {
+      var number = j - i;
+      if (number > 1) {
+        var c = 0;
+        for (k = 1; k <= number; k++) {
+          if (number % k == 0) {
+            c++;
+          }
+        }
+        if (c == 2) {
+          sum = sum + Math.abs(array[i] - array[j]);
+        }
+      }
+    }
+  }
+  console.log(sum);
 }
 
 if (process.env.USERNAME == "bhargav") {

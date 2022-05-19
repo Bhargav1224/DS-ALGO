@@ -31,7 +31,7 @@
 
 function runProgram(input) {
   let str = input.split("");
-  console.log(str);
+  // console.log(str);
   Palindrome(str);
 }
 
@@ -40,13 +40,17 @@ function Palindrome(str) {
   let right = str.length - 1;
   let palindrome = false;
   let count = 0;
-  while (left < right || left == right) {
+  while (left < right) {
+    console.log(str[left], str[right]);
     if (str[left] === str[right]) {
       palindrome = true;
       count++;
+      left++;
+      right--;
+    } else {
+      left++;
+      right--;
     }
-    left++;
-    right--;
   }
   if (palindrome) {
     console.log("Yes");
